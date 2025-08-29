@@ -1,0 +1,26 @@
+[
+  {
+    "prompt": "\n what is Price Oracle Manipulation? \n",
+    "completion": "\n Price Oracle Manipulation is a type of Machine Unauditable Bugs (MUBs), We can understand it in this way: There exists a price oracle contract whose price calculation depends on certain external states (e.g., reserve balances). An attacker can influence the price query results through legitimate interactions, thereby manipulating the price. \nWe label this type of error as S1, which can be further subdivided into S1-1, S1-2, and S1-3, where S1-1 represents AMM price oracle manipulation, S1-2 represents Sandwich attack, and S1-3 represents Non-AMM price oracle manipulation. \n"
+  },
+  {
+    "prompt": "\n what is ID Uniqueness Violations? \n",
+    "completion": "\n ID Uniqueness Violations is a type of Machine Unauditable Bugs (MUBs), We can understand it in this way: There exists a data structure representing entities or assets, which includes an ID field intended to uniquely identify them.Developers fail to ensure the uniqueness of the ID field or mistakenly use other fields as unique identifiers.Attackers can exploit this by forging or duplicating ID field values to bypass access control checks and perform unauthorized actions. We label this type of error as S2, which can be further subdivided into S2-1, S2-2, and S2-3, where S2-1 represents ID can be arbitrarily set by users or lack of ID validation. ID can also be a project-specified variable (e.g., hash) or an address, S2-2 represents Shared resource (e.g., token) without proper locks, and S2-3 represents ID uniqueness violation (i.e., an ID should be unique but it is not). \n"
+  },
+  {
+    "prompt": "\n what is Inconsistent State Updates? \n",
+    "completion": "\n Inconsistent State Updates is a type of Machine Unauditable Bugs (MUBs), We can understand it in this way: There are implicit correlations between state variables in smart contracts. Developers may forget to update other correlated variables when updating one variable, resulting in inconsistent states. We label this type of error as S3, which can be further subdivided into S3-1 and S3-2, where S3-1 represents Missing state update, and S3-2 represents Incorrect state updates, e.g., a state update that should not be there. \n"
+  },
+  {
+    "prompt": "\n what is Atomicity Violations? \n",
+    "completion": "\n Atomicity Violations is a type of Machine Unauditable Bugs (MUBs), We can understand it in this way: Multiple business flows concurrently access the same state variables, leading to the violation of business-level atomicity. We label this type of error as S4, which can be further subdivided into S4-1 , where S4-1 represents Lack of proper locks for a business flow consisting of multiple transactions. \n"
+  },
+  {
+    "prompt": "\n what is Privilege Escalation? \n",
+    "completion": "\n Privilege Escalation is a type of Machine Unauditable Bugs (MUBs), We can understand it in this way: There exists a sensitive operation with weak access control, allowing an attacker to bypass access control checks through unexpected business flows. \nWe label this type of error as S5, which can be further subdivided into S5-1, S5-2, and S5-3, where S5-1 represents Users can update privileged state variables arbitrarily (caused by lack of ID-unrelated input sanitization), S5-2 represents Users can invoke some functions at a time they should not be able to do so, and S5-3 represents Privileged functions can be called by anyone or at any time. \n"
+  },
+  {
+    "prompt": "\n what is Erroneous Accounting? \n",
+    "completion": "\n Erroneous Accounting is a type of Machine Unauditable Bugs (MUBs), We can understand it in this way: Numerical calculation errors in smart contracts introduce small inaccuracies each time they are executed. These inaccuracies accumulate and lead to significant losses. \nWe label this type of error as S6, which can be further subdivided into S6-1, S6-2, S6-3 and S6-4, where S6-1 represents Incorrect calculating order, S6-2 represents Returning an unexpected value that deviates from the expected semantics specified for the contract, S6-3 represents Calculations performed with incorrect numbers (e.g., x = a + b ==> x = a + c), and S6-4 represents Other accounting errors (e.g., x = a + b ==> x = a - b). \n"
+  }
+]
